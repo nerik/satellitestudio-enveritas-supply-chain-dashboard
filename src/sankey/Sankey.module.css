@@ -1,0 +1,26 @@
+.links path {
+  fill: none;
+}
+
+.label {
+  fill: var(--tertiary-brand-color);
+  font-size: var(--extra-small-font-size);
+}
+
+.labelHighlight {
+  fill: var(--secondary-brand-color);
+}
+
+.tooltip {
+  background-color: var(--white);
+}
+
+.supplyUnitTooltip {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.supplyUnitTooltip li {
+  margin: 3px 0;
+  line-height: 1;
+}

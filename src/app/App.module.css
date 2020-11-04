@@ -1,0 +1,68 @@
+/* all page layout stuff should go here */
+.sectionTall {
+  max-width: var(--full-width);
+  margin: 0 auto;
+  display: flex;
+  height: var(--section-height);
+  /* border-bottom: 1px solid var(--line-color); */
+}
+
+.sectionNarrow {
+  max-width: var(--full-width);
+  margin: 0 auto;
+  padding: 5rem 0;
+  /* border-bottom: 1px solid var(--line-color); */
+}
+
+.oneHalf {
+  width: var(--half-width);
+}
+
+.oneThird {
+  width: var(--one-third);
+}
+
+.twoThirds {
+  width: var(--two-thirds);
+}
+
+.left {
+  margin-right: var(--half-gutter-width);
+}
+
+.right {
+  margin-left: var(--half-gutter-width);
+}
+
+.centered {
+  margin: auto auto;
+}
+
+.centerInner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup {
+  position: absolute;
+  width: 300px;
+  background: var(--white);
+  padding: 20px;
+  z-index: 99;
+}
+
+.errorContainer {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.errorBtn {
+  font-size: var(--main-font-size);
+  padding: 1rem 2rem;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}

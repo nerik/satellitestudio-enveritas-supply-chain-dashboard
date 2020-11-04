@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,300');
+
+:root {
+  /* COLORS */
+  --main-brand-color: #002060;
+  --secondary-brand-color: #4C525F;
+  --tertiary-brand-color: #8A93A5;
+  --main-bg-color: #F2F5F4;
+  --white: #ffffff;
+  --black: #000;
+  --line-color: rgba(155, 155, 155, .3);
+
+  /* SIZES */
+  --full-width: 120rem;
+  --section-height: 70rem;
+  --half-gutter-width: .5rem;
+  --column-width: 9rem;
+  --half-width: 59.5rem;
+  --one-third: 39.5rem;
+  --two-thirds: 79.5rem;
+
+  /* TYPE */
+  --main-font-family: 'Nunito Sans', sans-serif;
+  --xlarge-font-size: 4rem;
+  --large-font-size: 2.4rem;
+  --main-font-size: 1.8rem;
+  --small-font-size: 1.6rem;
+  --extra-small-font-size: 1.4rem;
+  --main-font-weight: 400;
+  --light-font-weight: 300;
+  --max-paragraph-width: var(--half-width);
+
+  /* OTHERS */
+  --border-radius: 2px;
+  --hover-transition: all 300ms ease-in;
+}
+
+html{
+  font-size: 10px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-stroke: 0.2px;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--main-font-family);
+  font-weight: var(--main-font-weight);
+  font-size: var(--main-font-size);
+  background: var(--main-bg-color);
+}
+
+.__react_component_tooltip {
+  max-width: 300px;
+  background: var(--white);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.25);
+  color: var(--tertiary-brand-color)!important; /*sorry, but needed to overwrite tooltip styles */
+  font-size: var(--extra-small-font-size)!important;
+}
+
+.__react_component_tooltip.highlight,
+.__react_component_tooltip .highlight {
+  color: var(--secondary-brand-color)!important;
+}
+
+.__react_component_tooltip .primary {
+  color: var(--main-brand-color)!important;
+}

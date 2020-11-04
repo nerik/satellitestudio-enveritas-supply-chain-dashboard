@@ -1,0 +1,103 @@
+{
+  pillars {
+    id
+    label
+    standards {
+      id
+    }
+  }
+  standards {
+    id
+    label
+    criteria {
+      id
+    }
+  }
+  criteria {
+    id
+    label
+    criterionFlags {
+      id
+    }
+  }
+  criterionFlags {
+    id,
+    label
+  }
+  blends {
+    id
+    label
+  }
+  suppliers {
+    id
+    label
+  }
+  countries {
+    id
+    label
+    supplyUnits {
+      id
+    }
+  }
+  supplyUnits {
+    id
+    label
+    supplyUnitFlags {
+      id
+    }
+  }
+  supplyUnitFlags {
+    id
+  }
+  parcels {
+    supplyUnit {
+      id
+    }
+    supplier {
+      id
+    }
+    blend {
+      id
+    }
+    volume
+  }
+  traits {
+    supplyUnit {
+      id
+    }
+    criterion {
+      id
+    }
+    score
+  }
+  flagTraits {
+    supplyUnit {
+      id
+    }
+    criterionFlag {
+      id
+    }
+    ratio
+  }
+  volumeBucketConfigs {
+    country {
+      id
+    }
+    blend {
+      id
+    }
+    buckets
+  }
+  scoreBucketConfigs {
+    country {
+      id
+    }
+    blend {
+      id
+    }
+    pillar {
+      id
+    }
+    buckets
+  }
+}

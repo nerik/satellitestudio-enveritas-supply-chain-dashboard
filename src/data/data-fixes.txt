@@ -1,0 +1,16 @@
+- standard ID in eco pillar should be "eb", not "ep"
+- empty "me" standard
+- "gm" standard missing
+- "gm1" criteria missing
+- SUs with no parcels-
+- Some traits are referring to non-existant Supply Units, ie: "Guanacaste" (the actual supply unit id is "guacanaste", lower caps)
+- "Jutiapa-Jalapa-BajaVerapaz" appears in parcel as a supplyUnit that doesn't apper in the list of supplyUnits
+- Parcels volume in tons?
+- criterionFlag mmr doesn't match with any criterionFlags, could be mr?
+- bucketsConfig countries using labels instead of ids
+
+
+- The most minimun requirement criteria missed is not possible to calculate
+- When flatTraits empty, should we use 0 as default?
+- Updated the score bucket to have different values and look good
+- Updated the volume bucket to have different values and look good

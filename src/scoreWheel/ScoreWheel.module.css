@@ -1,0 +1,93 @@
+.ScoreWheel {
+  position: relative;
+  height: 100%;
+}
+
+.mainScore {
+  position: absolute;
+  z-index: 1;
+  font-size: var(--xlarge-font-size);
+  font-weight: var(--light-font-weight);
+  color: var(--main-brand-color);
+  top: 50%;
+  left: 50%;
+  transform: translate(-48%, -47%);
+}
+
+.mainScoreMini {
+  font-size: var(--large-font-size);
+}
+
+.pillarLabel {
+  position: absolute;
+  z-index: 1;
+  color: var(--secondary-brand-color);
+}
+
+.pillarScore {
+  color: var(--tertiary-brand-color);
+}
+
+.economic {
+  top: 9rem;
+  left: 0;
+}
+
+.social {
+  top: 2rem;
+  left: 46rem;
+}
+
+.environmental {
+  top: 41rem;
+  left: 35rem;
+}
+
+.plot {
+  display: block;
+  margin: auto;
+  height: 100%;
+}
+
+.bgCircle {
+  fill: var(--tertiary-brand-color);
+  fill-opacity: .1;
+}
+
+.fgCircle {
+  fill: var(--main-bg-color);
+}
+
+.ring {
+  stroke: var(--main-brand-color);
+  stroke-width: 1px;
+  fill: none;
+  opacity: .1;
+}
+
+.pillarSeparations path {
+  fill: var(--main-bg-color);
+}
+
+.radialGradient {
+  pointer-events: none;
+}
+
+.standardTooltip {
+  margin: 10px 0;
+}
+
+.standardTooltipHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.standardTooltip ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.standardTooltip ul li {
+  margin: 3px 0;
+  line-height: 1;
+}

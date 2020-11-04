@@ -1,0 +1,23 @@
+.SupplyUnitTooltip {
+  margin: 0;
+}
+
+.SupplyUnitTooltip > div:first-of-type {
+  padding: 2rem;
+}
+
+.supplyUnitLegend {
+  display: flex;
+  align-items: center;
+  color: var(--secondary-brand-color);
+}
+
+.supplyUnitLegend > svg {
+  margin-right: 1rem;
+}
+
+.text div {
+  font-size: var(--small-font-size);
+  line-height: 2.4rem;
+  margin-top: 1.8em;
+}

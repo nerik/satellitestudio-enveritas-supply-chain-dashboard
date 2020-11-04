@@ -1,0 +1,68 @@
+{
+  "name": "supply-chain-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "graphql": "node ./graphql",
+    "lint": "eslint -c package.json src/**/*.js src/**/*.jsx",
+    "generate-topojsons": "./scripts/generate-topojsons.js",
+    "encrypt-json": "./src/data/encrypt.js"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.1.1",
+    "@material-ui/icons": "^3.0.1",
+    "crypto-js": "^3.1.9-1",
+    "d3": "^5.7.0",
+    "lodash": "^4.17.11",
+    "react": "16.7.0",
+    "react-dom": "16.7.0",
+    "react-redux": "^5.0.7",
+    "react-spring": "^5.8.0",
+    "react-tooltip": "^3.9.2",
+    "redux": "^4.0.0",
+    "redux-first-router": "^2.1.1",
+    "reselect": "^4.0.0",
+    "topojson-client": "^3.0.0"
+  },
+  "devDependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphiql": "^0.12.0",
+    "graphql": "^14.0.2",
+    "graphql-type-json": "^0.2.1",
+    "mapshaper": "^0.4.105",
+    "react-scripts-cssmodules": "^1.1.50"
+  },
+  "homepage": ".",
+  "engines": {
+    "node": "^10",
+    "npm": "^6.7"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "plugin:react/recommended"
+    ],
+    "rules": {
+      "semi": [
+        "warn",
+        "always"
+      ],
+      "quotes": [
+        "warn",
+        "single"
+      ],
+      "react/prop-types": 2,
+      "react/require-default-props": 2,
+      "react/no-unused-prop-types": 2,
+      "no-shadow": [
+        "error"
+      ]
+    }
+  }
+}

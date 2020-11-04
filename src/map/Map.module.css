@@ -1,0 +1,82 @@
+.Map {
+  position: relative;
+}
+
+.Map:before {
+  content:'';
+  display: block;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  box-shadow: inset 0 0 5rem 4rem var(--main-bg-color);
+}
+
+.container {
+  transition: transform 1s;
+}
+
+.country, .supplyUnit {
+  fill: var(--main-bg-color);
+  stroke: var(--tertiary-brand-color);
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.country.active, .supplyUnit.active {
+  cursor: pointer;
+  fill: var(--secondary-brand-color);
+  pointer-events: auto;
+}
+
+.country.secondary {
+  stroke: var(--main-brand-color);
+  stroke-opacity: 0.4;
+  fill: var(--secondary-brand-color);
+  fill-opacity: 0.2;
+}
+
+.country.disabled {
+  stroke: var(--main-brand-color);
+  stroke-opacity: 0.1;
+  fill: var(--main-bg-color);
+  fill-opacity: 0.1;
+}
+
+.country.highlighted, .supplyUnit.highlighted {
+  stroke: var(--secondary-brand-color);
+}
+
+.country.highlighted {
+  /* stroke-width: 1.4px; */
+  filter: url(#mapShadowCountry);
+}
+
+.country.secondary {
+  fill: var(--main-bg-color);
+}
+
+.country.selected {
+  stroke: var(--secondary-brand-color);
+  stroke-width: 1px;
+  fill: none;
+  pointer-events: none;
+}
+
+.supplyUnit {
+  stroke-width: 0.1px;
+}
+
+.supplyUnit.highlighted {
+  stroke-width: 0.3px;
+  filter: url(#mapShadowSupplyUnit);
+}
+
+.tooltip {
+  max-width: 300px;
+  background: var(--white);
+  box-shadow: 0 2px 8px 0 rgba(0,0,0,0.25);
+}

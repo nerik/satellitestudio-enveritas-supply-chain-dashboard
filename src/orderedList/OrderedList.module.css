@@ -1,0 +1,67 @@
+.OrderedList {
+  font-size: var(--extra-small-font-size);
+  margin-top: 1rem;
+  min-width: 330px;
+  min-height: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.OrderedList ol {
+  margin: 0;
+  padding: 0;
+}
+
+.row {
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+  border-radius: var(--border-radius);
+  transition: var(--hover-transition);
+}
+
+.row:hover {
+  background: var(--white);
+}
+
+.row:hover .absoluteValue, .row:hover .percentage {
+  transition: var(--hover-transition);
+  color: var(--secondary-brand-color);
+}
+
+.name {
+  color: var(--secondary-brand-color);
+}
+
+.value {
+  margin: 0 1rem 0 auto;
+  color: var(--tertiary-brand-color);
+}
+
+.arrows {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.arrowButton {
+  border: none;
+  background: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  color: var(--tertiary-brand-color);
+  transition: var(--hover-transition);
+}
+
+.arrowButton:hover, .arrowButton:focus {
+  color: var(--main-brand-color);
+  outline: none;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: .2;
+}

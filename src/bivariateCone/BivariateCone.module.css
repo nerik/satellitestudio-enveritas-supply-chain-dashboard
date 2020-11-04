@@ -1,0 +1,24 @@
+.BivariateCone {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+.points circle {
+  fill: var(--white);
+  stroke: #000;
+  stroke-width: 1px;
+  stroke-opacity: 0.35;
+  transition: r 0.3s linear;
+}
+
+.points circle.pointBlurred {
+  r: 2.5;
+  stroke-opacity: 0.5;
+  stroke-width: 0.25;
+}
+
+.points circle.highlighted {
+  r: 7;
+  stroke-opacity: 1;
+  stroke-width: 1;
+}

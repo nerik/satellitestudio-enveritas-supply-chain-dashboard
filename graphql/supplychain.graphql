@@ -1,0 +1,125 @@
+type Query {
+  pillars: [Pillar!]!
+  standards: [Standard!]!
+  criteria: [Criterion!]!
+  criterionFlags: [CriterionFlag!]!
+  blends: [Blend!]!
+  suppliers: [Supplier!]!
+  countries: [Country!]!
+  supplyUnits: [SupplyUnit!]!
+  supplyUnitFlags: [SupplyUnit!]!
+  parcels: [Parcel!]!
+  traits: [Trait!]!
+  flagTraits: [FlagTrait!]!
+  volumeBucketConfigs: [VolumeBucketConfig!]!
+  scoreBucketConfigs: [ScoreBucketConfig!]!
+}
+
+"A Pillar is a thematic group of Standards"
+type Pillar {
+  id: ID!
+  label: String!
+  "A list of children Standards"
+  standards: [Standard!]!
+}
+
+"A Standard is a group of Criteria, that belongs to a single Pillar"
+type Standard {
+  id: ID!
+  label: String!
+  "A list of children Criteria"
+  criteria: [Criterion!]!
+}
+
+"A Criterion is a value between 0 and 1 representing the score of an entity on a given aspect, that belongs to a single Standard"
+type Criterion {
+  id: ID!
+  label: String!
+  "An optional list of Criterion Flags associated to the Criterion."
+  criterionFlags: [CriterionFlag!]
+}
+
+"A Criterion Flag gives a specific meaning to a set of Criteria, for instance all Criteria that are considered minimum requirements (MMR)"
+type CriterionFlag {
+  id: ID!,
+  label: String
+}
+
+"A Blend is a type of beans whose production can span across multiple countries"
+type Blend {
+  id: ID!
+  label: String!
+}
+
+type Supplier {
+  id: ID!
+  label: String!
+}
+
+"A Country is used to group Supply Units together."
+type Country {
+  id: ID!
+  label: String!
+  "A list of regional Supply Units belonging to the Country"
+  supplyUnits: [SupplyUnit!]!
+}
+
+"A Supply Unit correspond to a group of farmers (with or without geographical relevance)"
+type SupplyUnit {
+  id: ID!
+  label: String!
+  "An optional list of Supply Unit Flags associated to the Supply Unit."
+  supplyUnitFlags: [SupplyUnitFlag!]
+}
+
+"A SupplyUnitFlag gives a specific meaning to a set of Supply Units, for instance all Supply Units that are 'Known Supply Units' (not bound to a geography) or Supply Units that are not producing any coffee"
+type SupplyUnitFlag {
+  id: ID!
+}
+
+"A Parcel represent a certain volume of coffee of a given Blend, sold by a supply Unit to a Supplier, expressed in tons"
+type Parcel {
+  supplyUnit: SupplyUnit!
+  supplier: Supplier!
+  blend: Blend!
+  "The volume is expressed in tons"
+  volume: Float!
+}
+
+"A Trait associates a score with a Supply Unit in the context of a given Criterion. "
+type Trait {
+  supplyUnit: SupplyUnit!
+  criterion: Criterion!
+  "The score should be a value between 0 and 1"
+  score: Float!
+}
+
+"A FlagTrait associates a ratio of farmers with a Supply Unit, in the context of a given Criterion Flag (such as MMR, where it allows to answer the question: What is the % of farmers meeting MMR within a Supply Unit)."
+type FlagTrait {
+  supplyUnit: SupplyUnit!
+  criterionFlag: CriterionFlag!
+  "The ratio should be a value between 0 and 1"
+  ratio: Float!
+}
+
+"A VolumeBucketConfig allows sorting volume values defined in Parcels in different buckets (or classes), depending on the currently selected Country and Blend. When buckets are not found for a Country and Blend combination, the UI will fall back to the Country configuration."
+type VolumeBucketConfig {
+  "Country is optional. If omitted, the config applies to when all Countries are selected."
+  country: Country
+  "Blend is optional. If omitted, the config applies to when no Blend is selected."
+  blend: Blend
+  "Buckets must be an array of two values expressed in tons. The two array values define the breaks, thus the three buckets. The bucket values must be sorted by ascending order."
+  buckets: [Float!]!
+}
+
+"A ScoreBucketConfig allows sorting score values defined in Traits, in different buckets (or classes), depending on the currently selected Country, Blend, and Pillar. When buckets are not found for a Country, Blend and Pillar combination, the UI will fall back to the Country - Pillar configuration, then to the Country configuration."
+type ScoreBucketConfig {
+  "Country is optional. If omitted, the config applies to when all Countries are selected."
+  country: Country
+  "Blend is optional. If omitted, the config applies to when no Blend is selected."
+  blend: Blend
+  "Pillar is optional. If omitted, the config applies to when no Pillar is selected."
+  pillar: Pillar
+  "Buckets must be an array of four values expressing scores. The four array values define the breaks, thus the five buckets. The bucket values must be sorted by ascending order."
+  buckets: [Float!]!
+}

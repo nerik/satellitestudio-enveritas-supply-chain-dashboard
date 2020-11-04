@@ -1,0 +1,137 @@
+.TitleBar {
+  position: fixed;
+  width: 100%;
+  z-index: 10;
+}
+
+.topBar {
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--line-color);
+  display: flex;
+  height: 6rem;
+  align-items: center;
+  color: var(--tertiary-brand-color);
+}
+
+.logo {
+  position: absolute;
+  left: 2rem;
+  height: 2.2rem;
+}
+
+.currentFilters {
+  margin: 0 auto;
+  font-size: var(--small-font-size);
+}
+
+.currentFilters span {
+  cursor: pointer;
+}
+
+.currentFilters span:not(:last-child):after {
+  content: ' - ';
+}
+
+.toggleSearchButton {
+  position: absolute;
+  right: 1rem;
+  border: none;
+  background: none;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  color: var(--tertiary-brand-color);
+  transition: var(--hover-transition);
+}
+
+.toggleSearchButton:hover, .toggleSearchButton:focus {
+  background: var(--main-bg-color);
+  color: var(--main-brand-color);
+  outline: none;
+}
+
+.searchMenu {
+  position: fixed;
+  top:0;
+  width: 100%;
+  background: var(--white);
+  border-bottom: 1px solid var(--line-color);
+  height: 36rem;
+  box-shadow: 0 8px 10px 0 rgba(76,82,95,0.10);
+}
+
+.searchInputIcon {
+  margin: 0 2rem;
+  color: var(--main-brand-color);
+}
+
+.searchInput {
+  border: none;
+  width: calc(100% - 12rem);
+  height: 4rem;
+  font-family: var(--main-font-family);
+  font-size: var(--small-font-size);
+  color: var(--main-brand-color);
+  box-sizing: border-box;
+}
+
+.searchInput::placeholder {
+  color: var(--tertiary-brand-color);
+}
+
+.searchInput:focus {
+  outline: none;
+}
+
+.filters {
+  display: flex;
+  height: 30rem;
+}
+
+.filter {
+  height: 100%;
+  flex: 1;
+  padding: 0 2rem;
+  overflow: scroll;
+  border-right: 1px solid var(--line-color);
+}
+
+.filter ul {
+  list-style: none;
+  margin: 0 1.2;
+  padding-left: 0;
+  font-size: var(--small-font-size);
+  line-height: 3rem;
+}
+
+.filter .filterLabel {
+  color: var(--tertiary-brand-color);
+  display: block;
+}
+
+.filter li.filterItem {
+  color: var(--secondary-brand-color);
+  cursor: pointer;
+  transform-origin: left;
+}
+
+.filter li.filterItemActive,
+.filter li:hover {
+  color: var(--main-brand-color);
+}
+
+.filter li.placeholder {
+  color: var(--tertiary-brand-color);
+}
+
+/* clears the 'X' from Internet Explorer */
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
